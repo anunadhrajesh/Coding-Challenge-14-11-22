@@ -6,67 +6,152 @@ using System.Threading.Tasks;
 
 namespace LabQuestions14_11_22
 {
-        internal class FlightFares
-        {
-            private float _fare;
+    internal class Flight
+    {
+            public float[] FlightFares = new float[10];
+            private float temp;
+            private float maxval;
+            private float minval;
 
-            public float FlightFare
+            public void EnterData()
             {
-                get { return _fare; }
-                set
+                for (int i = 0; i < FlightFares.Length; i++)
                 {
-                    float temp = Convert.ToInt32(_bookingTime);
-                    if (temp >= 6 && temp < 9)
+                    Console.Write($"{i + 1}. Enter the Flight Fare : ");
+                    FlightFares[i] = float.Parse(Console.ReadLine());
+                }
+            }
+
+            public void Asort()
+            {
+
+                for (int i = 0; i < FlightFares.Length; i++)
+                {
+                    for (int j = i+1; j < FlightFares.Length; j++)
                     {
-                        temp = 10;
+                        if (FlightFares[i] < FlightFares[j])
+                        {
+                            temp = FlightFares[i];
+                            FlightFares[i] = FlightFares[j];
+                            FlightFares[j] = temp;
+                        }
                     }
-                    else if (temp >= 9 && temp < 17)
+                }
+
+
+                foreach (var item in FlightFares)
+                {
+                    Console.Write(item + " ");
+                }
+                Console.WriteLine();
+
+            }
+            public void Dsort()
+            {
+
+                for (int i = 0; i < FlightFares.Length; i++)
+                {
+                    for (int j = 0; j < FlightFares.Length; j++)
                     {
-                        temp = 20;
+                        if (FlightFares[i] > FlightFares[j])
+                        {
+                            temp = FlightFares[i];
+                            FlightFares[i] = FlightFares[j];
+                            FlightFares[j] = temp;
+                        }
                     }
-                    else if (temp >= 17 && temp < 23)
+                }
+
+
+                foreach (var item in FlightFares)
+                {
+                    Console.Write(item + " ");
+                }
+                Console.WriteLine();
+            }
+
+
+            public void SearchFare()
+            {
+                bool flag = false;
+                Console.WriteLine("Enter the name to be searched : ");
+                temp = float.Parse(Console.ReadLine());
+
+                for (int i = 0; i < FlightFares.Length; i++)
+                {
+                    if (temp == FlightFares[i])
                     {
-                        temp = 7;
+                        flag = true;
+                        break;
                     }
+                }
+
+                if (flag)
+                    Console.WriteLine("The fare is there in the Flight fare Array");
+                else
+                    Console.WriteLine("The name is not there in the Flight fare Array");
+
+            }
+
+            public void minmaxval()
+            {
+                for (int i = 0; i < FlightFares.Length; i++)
+                {
+                    for (int j = 0; j < FlightFares.Length; j++)
+                    {
+                        if (FlightFares[i] < FlightFares[j])
+                        {
+                            temp = FlightFares[i];
+                            FlightFares[i] = FlightFares[j];
+                            FlightFares[j] = temp;
+                        }
+                    }
+                }
+
+                minval = FlightFares[0];
+                maxval = FlightFares[FlightFares.Length - 1];
+
+                Console.WriteLine($"Maximum flight fare : {maxval}");
+                Console.WriteLine($"Minimum flight fare : {minval}");
+            }
+
+
+            public void duplicate()
+            {
+                var duplicates = new float[FlightFares.Length];
+                int k = 0;
+                foreach (var number in FlightFares)
+                {
+                    int count = 0;
+                    foreach (var item in FlightFares)
+                    {
+                        if (number == item)
+                            count++;
+                    }
+                    if (count >= 2)
+                    {
+                        bool hasFoundMatch = false;
+                        foreach (var num in duplicates)
+                        {
+                            if (num == number)
+                            {
+                                hasFoundMatch = true;
+                                break;
+                            }
+                        }
+                        if (!hasFoundMatch)
+                            duplicates[k++] = number;
+                    }
+                }
+                foreach (var item in duplicates)
+                {
+                    if (item == 0)
+                        break;
                     else
-                    {
-                        temp = 5;
-                    }
-                    _fare = value;
-                    _fare = _fare + (_fare * (float)(temp / 100));
-                    Console.WriteLine($"Increase in Fare Price {temp}% Booking Fare is : {_fare} ");
-                }
-            }
-
-            private string _bookingTime;
-
-            public string BookingTime
-            {
-                get { return _bookingTime; }
-                set
-                {
-                    _bookingTime = value;
-                    string[] time = value.Split(' ');
-                    if (time[1] == "PM")
-                    {
-                        int _time = Convert.ToInt32(time[0]);
-                        _time += 12;
-                        _bookingTime = Convert.ToString(_time);
-                        Console.WriteLine(_time);
-                        return;
-                    }
-                    else if (time[0] == "12")
-                    {
-                        int _time = Convert.ToInt32(time[0]);
-                        _time = 0;
-                        _bookingTime = Convert.ToString(_time);
-                        return;
-                    }
-                    _bookingTime = time[0];
+                        Console.WriteLine($"{item} ");
 
                 }
+
             }
-
-
         }
     }

@@ -13,7 +13,7 @@ namespace LabQuestions14_11_22
 
             public void Assign()
             {
-                int count = 0;
+                int count = 0; 
                 char f = 'y';
 
                 while (f == 'y')

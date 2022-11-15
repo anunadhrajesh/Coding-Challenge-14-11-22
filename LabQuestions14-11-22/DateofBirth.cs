@@ -20,7 +20,7 @@ namespace LabQuestions14_11_22
         }
         public void GetData()
         {
-            Console.WriteLine("DOB : " + DateofBirth);
+            Console.WriteLine("Date of Birth : " + DateofBirth);
 
         }
         public void Details()

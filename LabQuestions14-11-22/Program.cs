@@ -57,9 +57,55 @@ using LabQuestions14_11_22;
 
 //f.BookingTime = "10 AM";
 //Console.WriteLine(f.BookingTime);
+//var time = Console.ReadLine();
 //f.FlightFare = 100;
 
-///Q.) 4. PassengerDateofBirth
+/// Q.) 3. 10FlightFares
+
+//var fare = new Flight();
+
+//int choice;
+
+//fare.EnterData();
+
+//char flag = 'y';
+
+
+//while (flag == 'y')
+//{
+//    Console.WriteLine("\n 1.Ascending sort \n 2. Descending Sort \n 3.Search \n 4.Minimum and Maximum value \n 5.duplicates");
+//    Console.Write("Enter the choice : ");
+//    choice = int.Parse(Console.ReadLine());
+
+//    switch (choice)
+//    {
+//        case 1:
+//            fare.Asort();
+//            break;
+//        case 2:
+//            fare.Dsort();
+//            break;
+//        case 3:
+//            fare.SearchFare();
+//            break;
+//        case 4:
+//            fare.minmaxval();
+//            break;
+//        case 5:
+//            fare.duplicate();
+//            break;
+
+
+//        default:
+//            Console.WriteLine("Invalid choice");
+//            break;
+//    }
+
+//    Console.WriteLine("Do you want to continue(y/n)?");
+//    flag = char.Parse(Console.ReadLine());
+//}
+
+/// Q.) 4.PassengerDateofBirth
 
 
 //var A = new PDateofBirth();
@@ -69,5 +115,35 @@ using LabQuestions14_11_22;
 
 ///Q.) 5. FlightEvenOrOdd
 
-var flight = new FlightEvenOdd();
+
+var flight = new FlightEvenOrOdd();
+
 flight.Assign();
+
+
+///Q.) 12. MergeNameandDestination
+
+//string[] Name = new string[1];
+//for (int i = 0; i < Name.Length; i++)
+//{
+//    Console.WriteLine("Enter your Name");
+//    Name[i] = Console.ReadLine();
+//}
+
+//string[] Destination = new string[1];
+//for (int i = 0; i < Name.Length; i++)
+//{
+//    Console.WriteLine("Enter your Destination");
+//    Destination[i] = Console.ReadLine();
+//}
+
+
+//var Details = new List<string>();
+//Details.AddRange(Name);
+//Details.AddRange(Destination);
+//string[] Display = Details.ToArray();
+//Console.WriteLine("Combined Name and Destination is : ");
+//foreach (string Combined in Display)
+//{
+//    Console.WriteLine(Combined);
+//}
