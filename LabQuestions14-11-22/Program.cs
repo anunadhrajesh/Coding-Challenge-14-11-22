@@ -116,10 +116,38 @@ using LabQuestions14_11_22;
 ///Q.) 5. FlightEvenOrOdd
 
 
-var flight = new FlightEvenOrOdd();
+//var flight = new FlightEvenOrOdd();
 
-flight.Assign();
+//flight.Assign();
 
+
+///Q.) 9. 10DobPassenger
+
+//var dob = new DateTime[10];
+//Console.WriteLine("PASSENGER DETAILS");
+//Console.WriteLine("Enter Date of Birth OF 10 Passengers (dd-mm-yyyy");
+//for (int i = 0; i < dob.Length; i++)
+//{
+//    dob[i] = DateTime.Parse(Console.ReadLine());
+//}
+//string section;
+//int age;
+//for (int i = 0; i < dob.Length; i++)
+//{
+//    age = (int)((DateTime.Now - dob[i]).TotalDays / 365);
+
+
+
+//    if (age < 10)
+//        section = "Kid";
+//    else if (age >= 10 && age < 30)
+//        section = "Youth";
+//    else if (age <= 30 && age >= 60)
+//        section = "Adult";
+//    else
+//        section = "Older";
+//    Console.WriteLine($"{i + 1} {dob[i].Date} is a " + section);
+//}
 
 ///Q.) 12. MergeNameandDestination
 
@@ -147,3 +175,5 @@ flight.Assign();
 //{
 //    Console.WriteLine(Combined);
 //}
+
+
